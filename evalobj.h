@@ -60,5 +60,3 @@ class OpApp : public Exp {
   OpApp(enum op o, ExpList *a) { op = o; args = a; }
   int eval(env*);
 };
-
-#endif /* EVALOBJ_H_ */

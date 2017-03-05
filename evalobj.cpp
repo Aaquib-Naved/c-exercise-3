@@ -15,7 +15,7 @@ int getValue(string *var, env *list) {
         return 0;
     }
 
-    if(*(current->var) == *var) {
+    if(current->var == *var) {
         return current->value;
     }
 
@@ -28,7 +28,7 @@ int prepend(struct env **list, int n, string *x) {
     if (*list == NULL) {
         (*list) = new struct env;
         (*list)->value = n;
-        (*list)->var = x;
+        (*list)->var = *x;
         (*list)->next = NULL;
         return 0;
     }
@@ -37,7 +37,7 @@ int prepend(struct env **list, int n, string *x) {
 
     head->next = current;
     head->value = n;
-    head->var = x;
+    head->var = *x;
 
     *list = head;
 
